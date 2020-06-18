@@ -10,7 +10,12 @@ before:
 steps:
   - title: First step
     description: The first step in your course
-    event: issues.assigned
     link: '{{ repoUrl }}/issues/1'
-    actions:
+
+    # triggers the step
+    event: issues.assigned # github webhooks, api docs
+
+    # as a result of the trigger
+    actions: # come from the LL docs
       - type: closeIssue
+        issue: 1
