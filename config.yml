@@ -7,7 +7,26 @@ before:
   - type: createIssue
     title: Welcome!
     body: new-issue.md
+
+# Step 1: Learning objectives
+# 1. Say "hello" in Spanish.
+# 2. Say "hello" in German.
+
+# Step 2: Translate to GitHub
+# 1. Welcome issue, explains the LOs
+# 2. Spanish issue, we ask the learner to guess how to say "hello" in spanish
+# 3. Tell the learner how to say "hello" in spanish
+# 4. Close the spanish issue, open the german issue
+# 5. German issue, we ask the learner to guess how to say "hello"
+# 6. Tell the learn how to say "Hello" in German
+# 7. Close issue
+
+# Step 3:
+# Bot:
+# Learner:
+
 steps:
+#----------------------
   - title: First step
     description: The first step in your course
     link: '{{ repoUrl }}/issues/1'
@@ -20,6 +39,13 @@ steps:
       - type: closeIssue
         issue: 1
       - type: createIssue
-        title: The Spanish Language
+        title: Say "Hello" in Spanish
         body: spanish_intro.md
-      
+#----------------------
+  - title:
+    description:
+    link:
+
+    event: issue_comment.created # github webhooks, api docs
+
+    actions:
