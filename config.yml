@@ -19,3 +19,7 @@ steps:
     actions: # come from the LL docs
       - type: closeIssue
         issue: 1
+      - type: createIssue
+        title: The Spanish Language
+        body: spanish_intro.md
+      
