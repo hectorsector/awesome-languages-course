@@ -42,9 +42,9 @@ steps:
         title: Say "Hello" in Spanish
         body: spanish_intro.md
 #----------------------
-  - title:
-    description:
-    link:
+  - title: Second step
+    description: The second step in the course
+    link: '{{ repoUrl }}/issues/2'
 
     # triggers the step
     event: issue_comment.created # github webhooks, api docs
