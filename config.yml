@@ -7,10 +7,50 @@ before:
   - type: createIssue
     title: Welcome!
     body: new-issue.md
+
+# Step 1: Learning objectives
+# 1. Say "hello" in Spanish.
+# 2. Say "hello" in German.
+
+# Step 2: Translate to GitHub
+# 1. Welcome issue, explains the LOs
+# 2. Spanish issue, we ask the learner to guess how to say "hello" in spanish
+# 3. Tell the learner how to say "hello" in spanish
+# 4. Close the spanish issue, open the german issue
+# 5. German issue, we ask the learner to guess how to say "hello"
+# 6. Tell the learn how to say "Hello" in German
+# 7. Close issue
+
+# Step 3:
+# Bot:
+# Learner:
+
 steps:
+#----------------------
   - title: First step
     description: The first step in your course
-    event: issues.assigned
     link: '{{ repoUrl }}/issues/1'
-    actions:
+
+    # triggers the step
+    event: issues.assigned # github webhooks, api docs
+
+    # as a result of the trigger
+    actions: # come from the LL docs
       - type: closeIssue
+        issue: 1
+      - type: createIssue
+        title: Say "Hello" in Spanish
+        body: spanish_intro.md
+#----------------------
+  - title: Second step
+    description: The second step in the course
+    link: '{{ repoUrl }}/issues/2'
+
+    # triggers the step
+    event: issue_comment.created # github webhooks, api docs
+
+    # as a result of the trigger, do:
+    actions:
+      - type: respond
+        with: 01_spanish_response.md
+      # evaluate the comment, did they do it right?
