@@ -1,3 +1,3 @@
 Your response was .....
 
-{{ payload }}
+{{payload.comment.body}}
