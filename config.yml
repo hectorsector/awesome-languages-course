@@ -46,6 +46,11 @@ steps:
     description:
     link:
 
+    # triggers the step
     event: issue_comment.created # github webhooks, api docs
 
+    # as a result of the trigger, do:
     actions:
+      - type: respond
+        with: 01_spanish_response.md
+      # evaluate the comment, did they do it right?
