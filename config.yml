@@ -39,7 +39,7 @@ steps:
       - type: closeIssue
         issue: 1
       - type: createIssue
-        title: Say "Hello" in Spanish
+        title: Say "Hola" in Spanish
         body: spanish_intro.md
 #----------------------
   - title: Second step
